@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "BarberSip",
+    "slug": "barbersip-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/barbersip-ico.png",
+    "scheme": "barbersip",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.barbersip.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "BarberSip membutuhkan akses kamera untuk pengambilan foto absensi kehadiran.",
+        "NSLocationWhenInUseUsageDescription": "BarberSip membutuhkan akses lokasi GPS untuk memvalidasi radius kehadiran absensi."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/barbersip-ico.png",
+        "backgroundColor": "#030611"
+      },
+      "package": "com.barbersip.mobile",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "BarberSip membutuhkan izin kamera untuk absensi kehadiran capster."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "BarberSip membutuhkan izin lokasi untuk validasi radius absensi capster."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
